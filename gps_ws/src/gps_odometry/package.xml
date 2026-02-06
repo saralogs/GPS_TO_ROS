@@ -4,8 +4,8 @@
   <name>gps_odometry</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="saras@todo.todo">saras</maintainer>
-  <license>TODO: License declaration</license>
+  <maintainer email="shameensara@gmail.com">saras</maintainer>
+  <license>Apache License 2.0</license>
 
   <depend>rcply</depend>
   <depend>std_msgs</depend>
