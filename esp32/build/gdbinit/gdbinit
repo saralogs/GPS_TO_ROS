@@ -1,0 +1,2 @@
+source /home/saras/GPS_TO_ROS/esp32/build/gdbinit/symbols
+source /home/saras/GPS_TO_ROS/esp32/build/gdbinit/connect

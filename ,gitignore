@@ -1,0 +1,52 @@
+# =========================
+# ESP-IDF build artifacts
+# =========================
+build/
+sdkconfig
+sdkconfig.old
+*.bin
+*.elf
+*.map
+*.log
+
+managed_components/
+dependencies.lock
+
+# =========================
+# CMake
+# =========================
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+
+# =========================
+# Logs
+# =========================
+logs/*
+!logs/.gitkeep
+*.nmea
+
+# =========================
+# VSCode
+# =========================
+.vscode/
+
+# =========================
+# OS junk
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Temporary files
+# =========================
+*.swp
+*.tmp
