@@ -109,23 +109,30 @@ class GpsOdometry(Node):
         self.prev_x = x
         self.prev_y = y
 
-    def parse_gps(self, line: str):
-        """
-        Expected format:
-        LAT:11.321456,LON:75.934567
-        """
-        try:
-            parts = line.split(',')
+def parse_gps(self, line: str):
+    """
+    Expected format:
+    $GPS,<lat>,<lon>,<alt>,<satellites>,<speed>
+    Example:
+    $GPS,11.321456,75.934567,12.3,8,0.52
+    """
+    try:
+        parts = line.split(',')
 
-            lat_str = parts[0].split(':')[1]
-            lon_str = parts[1].split(':')[1]
+        # Basic validation
+        if len(parts) < 6:
+            raise ValueError("Incomplete GPS data")
 
-            lat = float(lat_str)
-            lon = float(lon_str)
+        if parts[0] != "$GPS":
+            raise ValueError("Invalid header")
 
-            return lat, lon
-        except (IndexError, ValueError):
-            raise ValueError(f"Invalid GPS format: {line}")
+        lat = float(parts[1])
+        lon = float(parts[2])
+
+        return lat, lon
+
+    except (ValueError, IndexError):
+        raise ValueError(f"Invalid GPS format: {line}")
 
     def publish_tf(self, stamp, x, y, q):
         t = TransformStamped()
