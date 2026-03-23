@@ -6,7 +6,7 @@
  * published by Sam Hocevar. See the COPYING file for more details.
  */
 
-#include "include/minmea.h"
+#include "minmea.h"
 
 #include <stdlib.h>
 #include <string.h>
